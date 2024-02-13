@@ -1,6 +1,7 @@
 import { Link, Outlet, useParams } from "react-router-dom";
 import { getSingleStudent } from "../services/requests";
 import { useEffect, useState } from "react";
+import styles from "../styles/StudentPage.module.css";
 
 const StudentPage = () => {
   const [student, setStudent] = useState({});
@@ -15,7 +16,7 @@ const StudentPage = () => {
   }, [id]);
 
   return (
-    <main>
+    <main className={styles.wrapper}>
       {/* {student && (
         <>
           <img src={student?.picture?.large} alt={student.name.last} />
@@ -24,25 +25,27 @@ const StudentPage = () => {
         </>
       )} */}
       {student && (
-        <>
+        <div className={styles.cardWrapper}>
           <img
+            className={styles.cardImg}
             src="https://fakeimg.pl/250x250/d17979/ededed?text=I+am+Student"
             alt={student.name}
           />
-          <p>{student.name}</p>
-          <p>{student.username}</p>
-        </>
+          <h1 className={styles.title}>{student.name}</h1>
+          <p className={styles.text}>UserName: {student.username}</p>
+        </div>
       )}
-      <ul>
-        <li>
-          <Link to="adress">Adress</Link>
+      <ul className={styles.nav}>
+        <li className={styles.navItem}>
+          <Link className={styles.navLink} to="adress">
+            Adress
+          </Link>
         </li>
 
-        <li>
-          <Link to="data">Data</Link>
-        </li>
-        <li>
-          <Link to="contact">Contact</Link>
+        <li className={styles.navItem}>
+          <Link className={styles.navLink} to="contact">
+            Contact
+          </Link>
         </li>
       </ul>
       <Outlet />

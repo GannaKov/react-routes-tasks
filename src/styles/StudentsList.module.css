@@ -1,0 +1,22 @@
+.list {
+  padding: 1rem;
+  max-width: 0 auto;
+  display: grid;
+  gap: 2rem;
+}
+.item {
+  padding: 1rem;
+  width: 400px;
+  margin: 0 auto;
+  border: 1px solid rgb(13, 13, 13);
+}
+.link {
+  color: rgb(41, 41, 135);
+}
+
+.img {
+  margin: 0 auto;
+}
+.title {
+  margin-bottom: 1.5rem;
+}

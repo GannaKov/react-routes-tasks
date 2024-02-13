@@ -1,0 +1,31 @@
+.wrapper {
+  margin: 0 auto;
+  padding: 2rem;
+}
+.cardWrapper {
+  margin-bottom: 2rem;
+}
+.cardImg {
+  margin-bottom: 2rem;
+}
+.title {
+  margin-bottom: 1rem;
+}
+.text {
+  font-size: 1.3rem;
+}
+.nav {
+  border-top: 1px solid black;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-around;
+  /* flex-direction: column; */
+  gap: 1rem;
+}
+.navItem {
+  font-size: 1.5rem;
+}
+.navLink:is(:hover) {
+  text-decoration: underline;
+}

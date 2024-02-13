@@ -1,0 +1,22 @@
+.wrapper {
+  display: grid;
+}
+.headerWrp {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid gray;
+}
+.navList {
+  display: flex;
+  justify-content: space-around;
+}
+.navLink {
+  font-size: 1.3rem;
+  color: green;
+}
+.navLink:is(:hover) {
+  text-decoration: underline;
+}
+.active {
+  color: red;
+}

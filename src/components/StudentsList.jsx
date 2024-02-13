@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-// import { useParams } from "react-router-dom";
+import styles from "../styles/StudentsList.module.css";
 
 import { Link } from "react-router-dom";
 
@@ -7,7 +7,7 @@ const StudentsList = ({ studentsArr }) => {
   // const { id } = useParams();
 
   return (
-    <ul>
+    <ul className={styles.list}>
       {/* {studentsArr.map((student) => (
         <li key={student.login.uuid}>
           <Link to={`${student.login.uuid}`}>
@@ -18,10 +18,11 @@ const StudentsList = ({ studentsArr }) => {
         </li>
       ))} */}
       {studentsArr.map((student) => (
-        <li key={student.id}>
+        <li key={student.id} className={styles.item}>
           <Link to={`${student.id}`}>
-            <p>{student.name}</p>
+            <h2 className={styles.title}>{student.name}</h2>
             <img
+              className={styles.img}
               src="https://fakeimg.pl/200x200/6dc46a/ededed?text=I+am+Student"
               alt={student.name}
             />

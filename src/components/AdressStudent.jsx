@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { getSingleStudent } from "../services/requests";
 import { useEffect, useState } from "react";
+import styles from "../styles/Adress.module.css";
 
 const AdressStudent = () => {
   const [student, setStudent] = useState({});
@@ -16,10 +17,10 @@ const AdressStudent = () => {
   }, [id]);
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       {student && (
         <>
-          <h2>Address:</h2>
+          <h2 className={styles.title}>Address:</h2>
 
           <p>
             {student?.address?.street}
