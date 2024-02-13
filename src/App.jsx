@@ -1,11 +1,30 @@
+import { Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
-
-import Example from "./components/example";
+import Student from "./components/Student.jsx";
+import Result from "./components/Result.jsx";
 
 const App = () => {
   return (
     <div>
-      <Example />
+      <nav>
+        <NavLink
+          to="/students/2"
+          style={({ isActive }) => ({ color: isActive ? "red" : "green" })}
+        >
+          Student
+        </NavLink>
+        <NavLink
+          to="/results/john"
+          style={({ isActive }) => ({ color: isActive ? "red" : "green" })}
+        >
+          Result
+        </NavLink>
+      </nav>
+
+      <Routes>
+        <Route path="/students/:id" element={<Student />} />
+        <Route path="/results/:name" element={<Result />} />
+      </Routes>
     </div>
   );
 };
