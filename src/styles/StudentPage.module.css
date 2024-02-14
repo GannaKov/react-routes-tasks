@@ -14,6 +14,20 @@
 .text {
   font-size: 1.3rem;
 }
+.goBackBtn {
+  margin-bottom: 2rem;
+  width: 140px;
+  height: 40px;
+  background-color: white;
+  color: orangered;
+  border: 1px solid orangered;
+  outline: 1px solid transparent;
+  border-radius: 5px;
+}
+.goBackBtn:is(:hover, :focus) {
+  background-color: orangered;
+  color: white;
+}
 .nav {
   border-top: 1px solid black;
   padding-top: 2rem;

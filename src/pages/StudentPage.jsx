@@ -1,4 +1,4 @@
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import { getSingleStudent } from "../services/requests";
 import { useEffect, useState } from "react";
 import styles from "../styles/StudentPage.module.css";
@@ -6,6 +6,7 @@ import styles from "../styles/StudentPage.module.css";
 const StudentPage = () => {
   const [student, setStudent] = useState({});
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getSingleStudent(id)
@@ -15,6 +16,9 @@ const StudentPage = () => {
       .catch((error) => console.log(error.message));
   }, [id]);
 
+  function handleGoBackBtnClick() {
+    navigate("/students");
+  }
   return (
     <main className={styles.wrapper}>
       {/* {student && (
@@ -35,6 +39,13 @@ const StudentPage = () => {
           <p className={styles.text}>UserName: {student.username}</p>
         </div>
       )}
+      <button
+        className={styles.goBackBtn}
+        type="button"
+        onClick={handleGoBackBtnClick}
+      >
+        &larr; Go Back
+      </button>
       <ul className={styles.nav}>
         <li className={styles.navItem}>
           <Link className={styles.navLink} to="adress">
@@ -48,6 +59,7 @@ const StudentPage = () => {
           </Link>
         </li>
       </ul>
+
       <Outlet />
     </main>
   );
